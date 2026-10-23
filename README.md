@@ -9,16 +9,18 @@ This repository contains public connection metadata and documentation. The produ
 | Endpoint | Authentication | Intended use |
 | --- | --- | --- |
 | `https://mcp.dotmoose.com/public/mcp` | None | Product and domain discovery, quotes, publication planning, and a secure first-party signup handoff |
+| `https://mcp.dotmoose.com/tools/mcp` | None | Public DNS, domain, mail, TLS, HTTP, and website diagnostics, Looking Glass probes from Canada, and network calculators |
 | `https://mcp.dotmoose.com/mcp` | OAuth 2.1 | Existing-customer account, service, support, diagnostics, and confirmation-gated operations |
 
 Health checks:
 
 - `https://mcp.dotmoose.com/public/healthz`
+- `https://mcp.dotmoose.com/tools/healthz`
 - `https://mcp.dotmoose.com/healthz`
 
 The service uses stateless Streamable HTTP with the MCP `2026-07-28` protocol revision and a `2025-11-25` compatibility path for established clients.
 
-Open either endpoint in a normal web browser to see its tool inventory, setup examples, and safety model. These documentation pages do not require authentication. MCP protocol requests to the account endpoint still require OAuth 2.1; strict content negotiation keeps browser HTML and protocol traffic separate.
+Open any endpoint in a normal web browser to see its tool inventory, setup examples, and safety model. These documentation pages do not require authentication. MCP protocol requests to the account endpoint still require OAuth 2.1; strict content negotiation keeps browser HTML and protocol traffic separate.
 
 ## Quick connection
 
@@ -29,6 +31,18 @@ For product and domain discovery, add this remote server to an MCP client:
   "mcpServers": {
     "dotmoose-public": {
       "url": "https://mcp.dotmoose.com/public/mcp"
+    }
+  }
+}
+```
+
+For the free diagnostic tools, add the Tools endpoint instead:
+
+```json
+{
+  "mcpServers": {
+    "dotmoose-tools": {
+      "url": "https://mcp.dotmoose.com/tools/mcp"
     }
   }
 }
@@ -82,6 +96,13 @@ The anonymous endpoint exposes eight intentionally narrow tools:
 - `quote_domain`
 - `plan_app_publication`
 - `start_signup`
+
+The Tools endpoint exposes 40 read-only tools that need no account:
+
+- 33 diagnostics that run the same public checks as the free tools at dotmoose.com/tools: DNS propagation, delegation, DNSSEC, CNAME chains, RDAP, IP and reverse DNS lookups, TLS certificate and configuration, HTTP chains and status, web timing, website security, security.txt, compression, IPv6, favicon, link audits, page metadata, robots.txt, sitemaps, SPF, DMARC, DKIM, MX, SMTP STARTTLS, MTA-STS, TLS-RPT, BIMI, blacklist checks, and Looking Glass ping, traceroute, and path probes from the DotMoose network in Canada.
+- 7 local calculators and builders: subnet calculation, IP range to CIDR conversion, bandwidth calculation, storage growth and backup retention estimates, and SPF and DMARC record builders.
+
+Targets must resolve only to public addresses. The diagnostic service rejects private, loopback, link-local, and reserved destinations. Results are point-in-time observations and each one links to the matching tool page on dotmoose.com.
 
 The account endpoint exposes tools for session and service discovery, support, diagnostics, security assessment, deployment planning, source and image deployment preparation, launch-readiness verification, and other account operations. See [docs/tools.md](docs/tools.md) for the supported workflows and safeguards.
 

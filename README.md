@@ -18,7 +18,7 @@ Health checks:
 
 The service uses stateless Streamable HTTP with the MCP `2026-07-28` protocol revision and a `2025-11-25` compatibility path for established clients.
 
-Open the public endpoint in a normal web browser to see the complete tool inventory, setup examples, safety model, and account-endpoint overview. MCP clients use that same URL; strict content negotiation keeps browser HTML and protocol traffic separate.
+Open either endpoint in a normal web browser to see its tool inventory, setup examples, and safety model. These documentation pages do not require authentication. MCP protocol requests to the account endpoint still require OAuth 2.1; strict content negotiation keeps browser HTML and protocol traffic separate.
 
 ## Quick connection
 

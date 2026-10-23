@@ -16,7 +16,9 @@ Health checks:
 - `https://mcp.dotmoose.com/public/healthz`
 - `https://mcp.dotmoose.com/healthz`
 
-The service uses Streamable HTTP and the MCP `2026-07-28` protocol revision.
+The service uses stateless Streamable HTTP with the MCP `2026-07-28` protocol revision and a `2025-11-25` compatibility path for established clients.
+
+Open the public endpoint in a normal web browser to see the complete tool inventory, setup examples, safety model, and account-endpoint overview. MCP clients use that same URL; strict content negotiation keeps browser HTML and protocol traffic separate.
 
 ## Quick connection
 

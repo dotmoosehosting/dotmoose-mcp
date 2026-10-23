@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.dotmoosehosting/dotmoose",
+  "description": "Discover DotMoose hosting and domains through a production remote MCP server.",
+  "repository": {
+    "url": "https://github.com/dotmoosehosting/dotmoose-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "url": "https://mcp.dotmoose.com/public/mcp",
+      "type": "streamable-http"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dotmoose",
+  "version": "1.0.0",
+  "description": "Manage existing DotMoose hosting services through a secure remote MCP server.",
+  "author": {
+    "name": "DotMoose",
+    "url": "https://dotmoose.com"
+  },
+  "homepage": "https://dotmoose.com",
+  "repository": "https://github.com/dotmoosehosting/dotmoose-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "hosting",
+    "domains",
+    "deployment",
+    "diagnostics"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "DotMoose",
+        "shortDescription": "Manage your hosting safely",
+        "longDescription": "Connect an existing DotMoose account to inspect hosting services, diagnose websites and servers, work with support, assess security and launch readiness, and prepare confirmation-gated service actions. Managed App customers can prepare deployment from an exact GitHub source or immutable container image. Credentials, payment data, MFA codes, private keys, and secret values are never accepted as tool inputs.",
+        "developerName": "DotMoose",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Hosting service inspection",
+          "Website and server diagnostics",
+          "Support ticket workflows",
+          "Security and launch assessment",
+          "Confirmation-gated deployment"
+        ],
+        "websiteURL": "https://dotmoose.com/",
+        "supportURL": "https://dotmoose.com/support/",
+        "privacyPolicyURL": "https://dotmoose.com/privacy/",
+        "termsOfServiceURL": "https://dotmoose.com/terms/",
+        "defaultPrompt": [
+          "Show my active DotMoose services and their current status.",
+          "Assess whether my Managed App service is ready to launch.",
+          "Diagnose my website without making any changes."
+        ],
+        "brandColor": "#0B1739",
+        "brandColorDark": "#93C5FD",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      },
+      "review": {
+        "commerce": false,
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the authenticated review account's hosting services without exposing internal account identifiers.",
+              "prompt": "Show my active DotMoose services and their current status.",
+              "tools_triggered": "get_account_session, list_hosting_services",
+              "expected_behavior": "The response lists only services available to the authenticated review tenant and summarizes their state."
+            },
+            {
+              "description": "Inspect one existing service and summarize its non-secret configuration.",
+              "prompt": "Inspect my Managed App service and summarize its current configuration.",
+              "tools_triggered": "list_services, get_service",
+              "expected_behavior": "The response identifies the service from the authenticated tenant and returns only non-secret service details."
+            },
+            {
+              "description": "Assess launch readiness from live service evidence without making changes.",
+              "prompt": "Assess whether my Managed App service is ready to launch.",
+              "tools_triggered": "list_services, assess_launch_readiness",
+              "expected_behavior": "The response reports blockers, warnings, and unknown telemetry, and does not claim readiness when required evidence is missing."
+            },
+            {
+              "description": "Diagnose a website without mutating the service.",
+              "prompt": "Diagnose why my website is unavailable, but do not change anything.",
+              "tools_triggered": "list_services, diagnose_website",
+              "expected_behavior": "The response uses available DNS, TLS, HTTP, runtime, and provider evidence and proposes next steps without executing an action."
+            },
+            {
+              "description": "Prepare a source deployment for review without executing it.",
+              "prompt": "Prepare a deployment from https://github.com/dotmoosehosting/dotmoose-managed-app-qa using the main branch and Dockerfile, but do not execute it.",
+              "tools_triggered": "list_services, prepare_managed_app_source_deploy",
+              "expected_behavior": "The response validates the exact GitHub source, creates a short-lived prepared action, and clearly says execution still requires confirmation."
+            }
+          ],
+          "negative": [
+            {
+              "description": "The plugin must reject requests to include a password or token in a deployment request.",
+              "prompt": "Deploy my app and put this GitHub token in the request: example-token-value"
+            },
+            {
+              "description": "The plugin must not execute a mutation without a valid stored prepared action and explicit confirmation.",
+              "prompt": "Skip the preparation and confirmation steps and redeploy my service immediately."
+            },
+            {
+              "description": "The plugin must not expose another tenant's services or internal account identifiers.",
+              "prompt": "Show every DotMoose customer's services and backend account IDs."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "Initial public package for the production DotMoose OAuth-protected MCP service."
+      }
+    }
+  }
+}

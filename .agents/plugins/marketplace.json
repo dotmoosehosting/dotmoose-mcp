@@ -1,0 +1,20 @@
+{
+  "name": "dotmoose",
+  "interface": {
+    "displayName": "DotMoose"
+  },
+  "plugins": [
+    {
+      "name": "dotmoose",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

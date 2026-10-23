@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.dotmoosehosting/dotmoose-account",
+  "description": "Manage existing DotMoose hosting services through OAuth-protected MCP tools.",
+  "repository": {
+    "url": "https://github.com/dotmoosehosting/dotmoose-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "url": "https://mcp.dotmoose.com/mcp",
+      "type": "streamable-http"
+    }
+  ]
+}

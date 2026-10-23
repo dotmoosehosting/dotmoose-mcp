@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">DotMoose</title>
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <path d="M29 27c-3-5-6-7-10-8h-5l-5-5V7m10 12-2-10m7 13-1-11m12 16c3-5 6-7 10-8h5l5-5V7M45 19l2-10m-7 13 1-11" fill="none" stroke="#0b1739" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M23 26h18l4 7v16c0 4.4-3.6 8-8 8H27c-4.4 0-8-3.6-8-8V33l4-7Z" fill="#0b1739"/>
+  <path d="M25 36h14M25 43h14M25 50h14" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="39" cy="36" r="1.7" fill="#2563eb"/>
+  <circle cx="39" cy="43" r="1.7" fill="#2563eb"/>
+  <circle cx="39" cy="50" r="1.7" fill="#2563eb"/>
+</svg>

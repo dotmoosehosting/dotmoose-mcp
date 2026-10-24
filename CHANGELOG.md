@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 — 2026-10-24
+
+- Added separately validated OpenAI submission manifests for the account, public discovery, and public diagnostic MCP servers while retaining the all-in-one local plugin.
+- Added a repeatable build script that produces secret-free, uploadable ZIP archives after validating both official Agent Plugin schemas.
+
 ## 1.1.0 — 2026-10-23
 
 - Added the anonymous DotMoose Tools MCP endpoint at `https://mcp.dotmoose.com/tools/mcp`: 33 public diagnostic tools (DNS, domains, mail authentication, TLS, HTTP, website checks, blacklists, and Looking Glass probes from Canada) plus 7 local calculators and SPF/DMARC record builders.

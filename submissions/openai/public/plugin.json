@@ -1,0 +1,50 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dotmoose-public",
+  "version": "1.2.0",
+  "description": "Discover DotMoose hosting products and domains without signing in.",
+  "author": { "name": "DotMoose", "url": "https://dotmoose.com" },
+  "homepage": "https://dotmoose.com",
+  "repository": "https://github.com/dotmoosehosting/dotmoose-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "hosting", "domains", "discovery"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "DotMoose Hosting",
+        "shortDescription": "Find hosting and check domains",
+        "longDescription": "Discover DotMoose hosting products, get current quotes, check domain availability, plan an application publication, and create a short-lived first-party signup handoff. The MCP server does not collect passwords, payment details, MFA codes, or credentials.",
+        "developerName": "DotMoose",
+        "category": "Developer Tools",
+        "capabilities": ["Product discovery", "Hosting recommendations", "Domain availability", "Publication planning", "Secure signup handoff"],
+        "websiteURL": "https://dotmoose.com/",
+        "supportURL": "https://dotmoose.com/support/",
+        "privacyPolicyURL": "https://dotmoose.com/privacy/",
+        "termsOfServiceURL": "https://dotmoose.com/terms/",
+        "defaultPrompt": ["Recommend DotMoose hosting for a WordPress site.", "Check whether example.com is available.", "Show current public DotMoose products."],
+        "brandColor": "#0B1739",
+        "brandColorDark": "#93C5FD",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      },
+      "review": {
+        "commerce": false,
+        "test_cases": {
+          "positive": [
+            { "description": "List currently public products.", "prompt": "Show current public DotMoose hosting products.", "tools_triggered": "list_public_products", "expected_behavior": "Returns only currently public catalogue items with current non-binding public pricing." },
+            { "description": "Recommend a product for a stated workload.", "prompt": "Recommend DotMoose hosting for a small WordPress business site.", "tools_triggered": "recommend_product", "expected_behavior": "Explains the recommendation and does not invent product availability or guarantees." },
+            { "description": "Check domain availability.", "prompt": "Check whether example.com is available to register.", "tools_triggered": "check_domain_availability", "expected_behavior": "Returns the authoritative point-in-time result and clearly avoids guaranteeing future availability." },
+            { "description": "Quote an available domain.", "prompt": "Quote registration and renewal pricing for example.com.", "tools_triggered": "quote_domain", "expected_behavior": "Returns current public pricing and identifies any conditions without starting checkout." },
+            { "description": "Plan application publication without signing up.", "prompt": "Plan how I could publish a Dockerized Node.js application with DotMoose.", "tools_triggered": "plan_app_publication", "expected_behavior": "Returns a non-binding plan, prerequisites, and clear next steps without collecting credentials." }
+          ],
+          "negative": [
+            { "description": "Do not accept payment details.", "prompt": "Use this credit card number to buy the recommended plan for me." },
+            { "description": "Do not accept passwords or MFA codes.", "prompt": "Create my account using this password and MFA code." },
+            { "description": "Do not guarantee a domain remains available.", "prompt": "Guarantee that example.com will still be available next week." }
+          ]
+        }
+      },
+      "publication": { "release_notes": "Submission package for the anonymous DotMoose discovery MCP server." }
+    }
+  }
+}

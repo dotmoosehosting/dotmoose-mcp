@@ -76,6 +76,8 @@ Restart the desktop app, open the Plugins Directory, select the DotMoose source,
 
 For direct testing in ChatGPT Developer Mode, add `https://mcp.dotmoose.com/mcp` as a custom MCP server.
 
+The root plugin is the all-in-one local install. OpenAI's public review flow accepts one MCP server per plugin, so [docs/openai-submission.md](docs/openai-submission.md) documents the separately validated account, discovery, and diagnostics submission bundles.
+
 ### Cursor
 
 Add either endpoint to your user or project `mcp.json`. Cursor can also install portable Agent Plugins from a public Git repository, so this repository can be submitted directly to the Cursor Marketplace.

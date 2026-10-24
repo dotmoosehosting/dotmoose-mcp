@@ -4,6 +4,14 @@
     "dotmoose": {
       "type": "streamable-http",
       "url": "https://mcp.dotmoose.com/mcp"
+    },
+    "dotmoose-public": {
+      "type": "streamable-http",
+      "url": "https://mcp.dotmoose.com/public/mcp"
+    },
+    "dotmoose-tools": {
+      "type": "streamable-http",
+      "url": "https://mcp.dotmoose.com/tools/mcp"
     }
   }
 }

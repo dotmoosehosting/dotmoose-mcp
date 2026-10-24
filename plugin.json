@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dotmoose",
-  "version": "1.0.0",
-  "description": "Manage existing DotMoose hosting services through a secure remote MCP server.",
+  "version": "1.1.0",
+  "description": "Discover, diagnose, and manage DotMoose hosting through secure remote MCP servers.",
   "author": {
     "name": "DotMoose",
     "url": "https://dotmoose.com"
@@ -22,11 +22,13 @@
       "interface": {
         "displayName": "DotMoose",
         "shortDescription": "Manage your hosting safely",
-        "longDescription": "Connect an existing DotMoose account to inspect hosting services, diagnose websites and servers, work with support, assess security and launch readiness, and prepare confirmation-gated service actions. Managed App customers can prepare deployment from an exact GitHub source or immutable container image. Credentials, payment data, MFA codes, private keys, and secret values are never accepted as tool inputs.",
+        "longDescription": "Discover DotMoose products and domains, use 40 anonymous DNS, mail, TLS, web, network, and Looking Glass tools, or connect an existing DotMoose account to inspect hosting services, diagnose websites and servers, work with support, assess security and launch readiness, and prepare confirmation-gated service actions. Managed App customers can prepare deployment from an exact GitHub source or immutable container image. Credentials, payment data, MFA codes, private keys, and secret values are never accepted as tool inputs.",
         "developerName": "DotMoose",
         "category": "Developer Tools",
         "capabilities": [
           "Hosting service inspection",
+          "Product and domain discovery",
+          "Public DNS, mail, TLS, web, and network diagnostics",
           "Website and server diagnostics",
           "Support ticket workflows",
           "Security and launch assessment",
@@ -98,7 +100,7 @@
         }
       },
       "publication": {
-        "release_notes": "Initial public package for the production DotMoose OAuth-protected MCP service."
+        "release_notes": "Adds the anonymous DotMoose Tools server with 40 DNS, mail, TLS, web, network, and Looking Glass tools and bundles all three production endpoints in one install."
       }
     }
   }

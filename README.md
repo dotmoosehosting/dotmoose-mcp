@@ -72,7 +72,7 @@ The repository includes a portable Agent Plugin manifest. In supported local Cod
 codex plugin marketplace add dotmoosehosting/dotmoose-mcp
 ```
 
-Restart the desktop app, open the Plugins Directory, select the DotMoose source, and install DotMoose. Authentication opens only when an account-scoped tool needs it.
+Restart the desktop app, open the Plugins Directory, select the DotMoose source, and install DotMoose. The install includes the public discovery, public diagnostic, and OAuth-protected account endpoints. Authentication opens only when an account-scoped tool needs it.
 
 For direct testing in ChatGPT Developer Mode, add `https://mcp.dotmoose.com/mcp` as a custom MCP server.
 

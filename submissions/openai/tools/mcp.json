@@ -3,7 +3,8 @@
   "mcpServers": {
     "dotmoose-tools": {
       "type": "streamable-http",
-      "url": "https://mcp.dotmoose.com/tools/mcp"
+      "url": "https://mcp.dotmoose.com/tools/mcp",
+      "extensions": { "com.openai": { "auth": { "type": "none" } } }
     }
   }
 }

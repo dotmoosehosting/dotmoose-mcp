@@ -3,7 +3,21 @@
   "mcpServers": {
     "dotmoose-account": {
       "type": "streamable-http",
-      "url": "https://mcp.dotmoose.com/mcp"
+      "url": "https://mcp.dotmoose.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": { "mode": "cimd" },
+            "resource": "https://mcp.dotmoose.com/mcp",
+            "baseScopes": ["openid", "email", "mcp:connect"],
+            "defaultScopes": ["services:read", "diagnostics:read", "security:read", "deployments:read", "plans:read", "deploy:prepare"],
+            "oidcEnabled": true,
+            "oidcUserinfoEndpoint": "https://auth.dotmoose.com/oauth/userinfo",
+            "oidcScopesSupported": ["openid", "email"]
+          }
+        }
+      }
     }
   }
 }

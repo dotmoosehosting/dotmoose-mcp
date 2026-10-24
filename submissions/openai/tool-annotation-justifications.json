@@ -1,0 +1,1364 @@
+{
+  "schemaVersion": 1,
+  "surfaces": {
+    "account": {
+      "endpoint": "https://mcp.dotmoose.com/mcp",
+      "tools": {
+        "assess_launch_readiness": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Assess managed launch readiness only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Assess managed launch readiness operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Assess managed launch readiness does not delete data or independently perform an irreversible action."
+          }
+        },
+        "assess_right_sizing": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Assess whether a hosting plan should change only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Assess whether a hosting plan should change operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Assess whether a hosting plan should change does not delete data or independently perform an irreversible action."
+          }
+        },
+        "assess_security_baseline": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Assess hosting security baseline only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Assess hosting security baseline operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Assess hosting security baseline does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_dns": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check DNS only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check DNS operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Check DNS does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_http": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check website HTTP only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check website HTTP operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Check website HTTP does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_tls": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check TLS certificate only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check TLS certificate operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Check TLS certificate does not delete data or independently perform an irreversible action."
+          }
+        },
+        "create_support_ticket": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Create a DotMoose support ticket creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Create a DotMoose support ticket operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Create a DotMoose support ticket does not delete data or independently perform an irreversible action."
+          }
+        },
+        "diagnose_server": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Diagnose why a server is down or unhealthy only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Diagnose why a server is down or unhealthy operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Diagnose why a server is down or unhealthy does not delete data or independently perform an irreversible action."
+          }
+        },
+        "diagnose_website": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Diagnose why a website is down only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Diagnose why a website is down operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Diagnose why a website is down does not delete data or independently perform an irreversible action."
+          }
+        },
+        "execute_prepared_action": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": true
+          },
+          "justifications": {
+            "read_only_justification": "Execute a stored prepared action creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Execute a stored prepared action operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Execute a stored prepared action may perform the explicitly confirmed high-impact operation described by a stored prepared action."
+          }
+        },
+        "execute_prepared_order": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": true
+          },
+          "justifications": {
+            "read_only_justification": "Execute a confirmed DotMoose service order creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Execute a confirmed DotMoose service order operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Execute a confirmed DotMoose service order may perform the explicitly confirmed high-impact operation described by a stored prepared action."
+          }
+        },
+        "get_account_session": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get DotMoose account session only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get DotMoose account session operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get DotMoose account session does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_ai_security_profile": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get managed security profile only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get managed security profile operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get managed security profile does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_billing_status": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get hosting billing status only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get hosting billing status operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get hosting billing status does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_domain": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get my DotMoose domain only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get my DotMoose domain operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get my DotMoose domain does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_hosting_service": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get hosting service status only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get hosting service status operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get hosting service status does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_invoice": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get my DotMoose invoice only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get my DotMoose invoice operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get my DotMoose invoice does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_logs": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get service logs only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get service logs operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get service logs does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_managed_app_deployments": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get Managed App deployment history only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get Managed App deployment history operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get Managed App deployment history does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_mcp_capabilities": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get DotMoose MCP capabilities only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get DotMoose MCP capabilities operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get DotMoose MCP capabilities does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_mcp_session": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get MCP session identity only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get MCP session identity operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get MCP session identity does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_order": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get my DotMoose order only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get my DotMoose order operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get my DotMoose order does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_provider_status": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get infrastructure provider status only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get infrastructure provider status operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get infrastructure provider status does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_recent_changes": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get recent service changes only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get recent service changes operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get recent service changes does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_recent_deployments": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get recent deployments only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get recent deployments operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get recent deployments does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_resource_usage": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get resource usage only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get resource usage operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get resource usage does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_runtime_status": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get application runtime status only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get application runtime status operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get application runtime status does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_service": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get my DotMoose service only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get my DotMoose service operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get my DotMoose service does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_service_overview": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Explain the overall health of a hosting service only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Explain the overall health of a hosting service operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Explain the overall health of a hosting service does not delete data or independently perform an irreversible action."
+          }
+        },
+        "get_ticket": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Get my DotMoose ticket only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Get my DotMoose ticket operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Get my DotMoose ticket does not delete data or independently perform an irreversible action."
+          }
+        },
+        "inspect_database": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Inspect database health only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Inspect database health operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Inspect database health does not delete data or independently perform an irreversible action."
+          }
+        },
+        "inspect_email_delivery": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Inspect email delivery only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Inspect email delivery operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Inspect email delivery does not delete data or independently perform an irreversible action."
+          }
+        },
+        "inspect_network": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Inspect service network only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Inspect service network operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Inspect service network does not delete data or independently perform an irreversible action."
+          }
+        },
+        "inspect_ports": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Inspect ports and listeners only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Inspect ports and listeners operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Inspect ports and listeners does not delete data or independently perform an irreversible action."
+          }
+        },
+        "inspect_project_for_deployment": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Inspect a project for deployment only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Inspect a project for deployment operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Inspect a project for deployment does not delete data or independently perform an irreversible action."
+          }
+        },
+        "inspect_security_state": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Inspect security state only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Inspect security state operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Inspect security state does not delete data or independently perform an irreversible action."
+          }
+        },
+        "inspect_web_stack": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Inspect web stack only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Inspect web stack operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Inspect web stack does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_backups": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List backups only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List backups operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List backups does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_dns_records": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List managed DNS records only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List managed DNS records operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List managed DNS records does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_domains": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List my DotMoose domains only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List my DotMoose domains operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List my DotMoose domains does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_dotmoose_offerings": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List DotMoose offerings and programs only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List DotMoose offerings and programs operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List DotMoose offerings and programs does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_hosting_plans": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List DotMoose hosting plans only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List DotMoose hosting plans operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List DotMoose hosting plans does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_hosting_services": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List my DotMoose services only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List my DotMoose services operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List my DotMoose services does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_invoices": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List my DotMoose invoices only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List my DotMoose invoices operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List my DotMoose invoices does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_orders": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List my DotMoose orders only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List my DotMoose orders operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List my DotMoose orders does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_processes": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List service processes only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List service processes operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List service processes does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_services": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List my DotMoose services only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List my DotMoose services operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List my DotMoose services does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_support_departments": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List DotMoose support departments only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List DotMoose support departments operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List DotMoose support departments does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_tickets": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List my DotMoose tickets only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List my DotMoose tickets operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List my DotMoose tickets does not delete data or independently perform an irreversible action."
+          }
+        },
+        "plan_app_deployment": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Plan an app or bot deployment only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Plan an app or bot deployment operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Plan an app or bot deployment does not delete data or independently perform an irreversible action."
+          }
+        },
+        "plan_incident_repair": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Plan a safe incident repair only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Plan a safe incident repair operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Plan a safe incident repair does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_app_publication": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare this project for a DotMoose service only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Prepare this project for a DotMoose service operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare this project for a DotMoose service does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_dedicated_quote": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare a dedicated server quote request only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Prepare a dedicated server quote request operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare a dedicated server quote request does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_domain_registration": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare domain registration only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Prepare domain registration operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare domain registration does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_domain_renewal": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare domain renewal only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Prepare domain renewal operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare domain renewal does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_domain_transfer": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare domain transfer only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Prepare domain transfer operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare domain transfer does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_managed_app_deploy": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare a Managed App deployment creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Prepare a Managed App deployment operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare a Managed App deployment does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_managed_app_rollback": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare a Managed App rollback creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Prepare a Managed App rollback operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare a Managed App rollback does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_managed_app_source_deploy": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare deployment from GitHub source creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Prepare deployment from GitHub source operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare deployment from GitHub source does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_new_service_order": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare a new DotMoose service order creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Prepare a new DotMoose service order operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare a new DotMoose service order does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_plan_change": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare a hosting plan change creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Prepare a hosting plan change operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare a hosting plan change does not delete data or independently perform an irreversible action."
+          }
+        },
+        "prepare_service_action": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Prepare a hosting service action creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Prepare a hosting service action operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Prepare a hosting service action does not delete data or independently perform an irreversible action."
+          }
+        },
+        "recommend_hosting_plan": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Recommend a hosting plan only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Recommend a hosting plan operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Recommend a hosting plan does not delete data or independently perform an irreversible action."
+          }
+        },
+        "reply_support_ticket": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Reply to my DotMoose support ticket creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Reply to my DotMoose support ticket operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Reply to my DotMoose support ticket does not delete data or independently perform an irreversible action."
+          }
+        }
+      }
+    },
+    "public": {
+      "endpoint": "https://mcp.dotmoose.com/public/mcp",
+      "tools": {
+        "check_domain_availability": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check DotMoose domain availability only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check DotMoose domain availability contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check DotMoose domain availability does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_current_promotions": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List current DotMoose promotions only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List current DotMoose promotions operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List current DotMoose promotions does not delete data or independently perform an irreversible action."
+          }
+        },
+        "list_public_products": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "List current DotMoose products and other offerings only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "List current DotMoose products and other offerings operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "List current DotMoose products and other offerings does not delete data or independently perform an irreversible action."
+          }
+        },
+        "plan_app_publication": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Plan how to publish an app or tool on DotMoose only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Plan how to publish an app or tool on DotMoose operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Plan how to publish an app or tool on DotMoose does not delete data or independently perform an irreversible action."
+          }
+        },
+        "quote_domain": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Quote a DotMoose domain only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Quote a DotMoose domain contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Quote a DotMoose domain does not delete data or independently perform an irreversible action."
+          }
+        },
+        "quote_public_product": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Quote a current DotMoose product only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Quote a current DotMoose product operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Quote a current DotMoose product does not delete data or independently perform an irreversible action."
+          }
+        },
+        "recommend_product": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Recommend a current DotMoose product only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Recommend a current DotMoose product operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Recommend a current DotMoose product does not delete data or independently perform an irreversible action."
+          }
+        },
+        "start_signup": {
+          "annotations": {
+            "readOnlyHint": false,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Start DotMoose signup/checkout creates or changes a first-party DotMoose record or executes a previously prepared action.",
+            "open_world_justification": "Start DotMoose signup/checkout operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Start DotMoose signup/checkout does not delete data or independently perform an irreversible action."
+          }
+        }
+      }
+    },
+    "tools": {
+      "endpoint": "https://mcp.dotmoose.com/tools/mcp",
+      "tools": {
+        "audit_page_links": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Audit links on one page only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Audit links on one page contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Audit links on one page does not delete data or independently perform an irreversible action."
+          }
+        },
+        "build_dmarc_record": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "DMARC record builder only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "DMARC record builder operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "DMARC record builder does not delete data or independently perform an irreversible action."
+          }
+        },
+        "build_spf_record": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "SPF record builder only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "SPF record builder operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "SPF record builder does not delete data or independently perform an irreversible action."
+          }
+        },
+        "calculate_bandwidth": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Bandwidth calculator only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Bandwidth calculator operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Bandwidth calculator does not delete data or independently perform an irreversible action."
+          }
+        },
+        "calculate_subnet": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Subnet calculator only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Subnet calculator operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Subnet calculator does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_bimi": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check a BIMI record only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check a BIMI record contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check a BIMI record does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_compression": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check compression only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check compression contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check compression does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_dkim": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check a DKIM record only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check a DKIM record contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check a DKIM record does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_dmarc": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check a DMARC record only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check a DMARC record contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check a DMARC record does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_dns_propagation": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check DNS propagation only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check DNS propagation contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check DNS propagation does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_dnssec": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check DNSSEC only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check DNSSEC contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check DNSSEC does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_domain_delegation": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check domain delegation only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check domain delegation contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check domain delegation does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_favicon": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check a favicon only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check a favicon contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check a favicon does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_forward_confirmed_rdns": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check forward-confirmed reverse DNS only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check forward-confirmed reverse DNS contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check forward-confirmed reverse DNS does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_http_chain": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check an HTTP redirect chain only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check an HTTP redirect chain contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check an HTTP redirect chain does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_http_status": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check HTTP status only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check HTTP status contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check HTTP status does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_ip_blacklists": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check IP blacklists only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check IP blacklists contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check IP blacklists does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_ipv6_website": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check IPv6 website reachability only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check IPv6 website reachability contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check IPv6 website reachability does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_mta_sts": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check MTA-STS only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check MTA-STS contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check MTA-STS does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_mx_records": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check MX records only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check MX records contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check MX records does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_page_metadata": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check page metadata only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check page metadata contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check page metadata does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_security_txt": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check security.txt only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check security.txt contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check security.txt does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_smtp_starttls": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check SMTP STARTTLS only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check SMTP STARTTLS contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check SMTP STARTTLS does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_spf": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check an SPF record only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check an SPF record contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check an SPF record does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_tls_certificate": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check a TLS certificate only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check a TLS certificate contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check a TLS certificate does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_tls_configuration": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check TLS configuration only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check TLS configuration contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check TLS configuration does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_tls_rpt": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check TLS-RPT only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check TLS-RPT contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check TLS-RPT does not delete data or independently perform an irreversible action."
+          }
+        },
+        "check_website_security": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Check website security controls only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Check website security controls contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Check website security controls does not delete data or independently perform an irreversible action."
+          }
+        },
+        "estimate_backup_retention": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Backup retention estimator only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Backup retention estimator operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Backup retention estimator does not delete data or independently perform an irreversible action."
+          }
+        },
+        "estimate_storage_growth": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Storage growth estimator only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Storage growth estimator operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "Storage growth estimator does not delete data or independently perform an irreversible action."
+          }
+        },
+        "ip_range_to_cidr": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": false,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "IP range to CIDR only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "IP range to CIDR operates only on local calculations or the authenticated DotMoose service, not unrelated third parties.",
+            "destructive_justification": "IP range to CIDR does not delete data or independently perform an irreversible action."
+          }
+        },
+        "looking_glass_path": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Looking Glass path sample only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Looking Glass path sample contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Looking Glass path sample does not delete data or independently perform an irreversible action."
+          }
+        },
+        "looking_glass_ping": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Looking Glass ping only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Looking Glass ping contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Looking Glass ping does not delete data or independently perform an irreversible action."
+          }
+        },
+        "looking_glass_traceroute": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Looking Glass traceroute only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Looking Glass traceroute contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Looking Glass traceroute does not delete data or independently perform an irreversible action."
+          }
+        },
+        "lookup_domain_rdap": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Look up domain registration (RDAP) only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Look up domain registration (RDAP) contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Look up domain registration (RDAP) does not delete data or independently perform an irreversible action."
+          }
+        },
+        "lookup_ip_info": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Look up IP information only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Look up IP information contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Look up IP information does not delete data or independently perform an irreversible action."
+          }
+        },
+        "measure_web_performance": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Measure web timing only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Measure web timing contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Measure web timing does not delete data or independently perform an irreversible action."
+          }
+        },
+        "test_robots_txt": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Test robots.txt rules only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Test robots.txt rules contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Test robots.txt rules does not delete data or independently perform an irreversible action."
+          }
+        },
+        "trace_cname_chain": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Trace a CNAME chain only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Trace a CNAME chain contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Trace a CNAME chain does not delete data or independently perform an irreversible action."
+          }
+        },
+        "validate_sitemap": {
+          "annotations": {
+            "readOnlyHint": true,
+            "openWorldHint": true,
+            "destructiveHint": false
+          },
+          "justifications": {
+            "read_only_justification": "Validate a sitemap only returns or computes information and does not create, update, or delete data.",
+            "open_world_justification": "Validate a sitemap contacts a user-selected public Internet target for a bounded observation and does not modify that target.",
+            "destructive_justification": "Validate a sitemap does not delete data or independently perform an irreversible action."
+          }
+        }
+      }
+    }
+  }
+}

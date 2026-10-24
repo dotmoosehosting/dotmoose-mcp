@@ -28,6 +28,8 @@ foreach ($schemaName in $schemas.Keys) {
 }
 
 $packages = @('account', 'public', 'tools')
+$reviewMetadata = Get-Content -LiteralPath (Join-Path $sourceRoot 'tool-annotation-justifications.json') -Raw | ConvertFrom-Json -Depth 100
+$expectedToolCounts = @{ account = 64; public = 8; tools = 40 }
 foreach ($package in $packages) {
     $source = Join-Path $sourceRoot $package
     $staging = Join-Path $distRoot $package
@@ -52,16 +54,61 @@ foreach ($package in $packages) {
     if (@($testCases.positive).Count -ne 5 -or @($testCases.negative).Count -ne 3) {
         throw "OpenAI submission $package must declare exactly five positive and three negative test cases"
     }
+    $reviewSurface = $reviewMetadata.surfaces.$package
+    if ($reviewSurface.endpoint -ne @($mcpManifest.mcpServers.PSObject.Properties)[0].Value.url) {
+        throw "OpenAI tool review endpoint does not match the $package MCP manifest"
+    }
+    if (@($reviewSurface.tools.PSObject.Properties).Count -ne $expectedToolCounts[$package]) {
+        throw "OpenAI tool review metadata has the wrong $package tool count"
+    }
+    foreach ($tool in @($reviewSurface.tools.PSObject.Properties)) {
+        foreach ($hint in @('readOnlyHint', 'openWorldHint', 'destructiveHint')) {
+            if ($tool.Value.annotations.$hint -isnot [bool]) { throw "$package/$($tool.Name) is missing boolean $hint" }
+        }
+        foreach ($field in @('read_only_justification', 'open_world_justification', 'destructive_justification')) {
+            $value = [string]$tool.Value.justifications.$field
+            if ([string]::IsNullOrWhiteSpace($value) -or $value.Length -gt 200) {
+                throw "$package/$($tool.Name) has an invalid $field"
+            }
+        }
+    }
+
+    $server = @($mcpManifest.mcpServers.PSObject.Properties)[0].Value
+    $auth = $server.extensions.'com.openai'.auth
+    $expectedAuthType = if ($package -eq 'account') { 'oauth' } else { 'none' }
+    if ($auth.type -ne $expectedAuthType) {
+        throw "OpenAI submission $package must declare auth.type=$expectedAuthType"
+    }
+    if ($package -eq 'account') {
+        if ($auth.client.mode -ne 'cimd' -or $auth.resource -ne 'https://mcp.dotmoose.com/mcp') {
+            throw 'Account submission must use CIMD preference and the exact MCP OAuth resource'
+        }
+        foreach ($scope in @('openid', 'email', 'mcp:connect')) {
+            if ($scope -notin @($auth.baseScopes)) { throw "Account submission is missing base scope $scope" }
+        }
+        if ($auth.oidcEnabled -ne $true -or $auth.oidcUserinfoEndpoint -ne 'https://auth.dotmoose.com/oauth/userinfo') {
+            throw 'Account submission must declare the production OIDC UserInfo endpoint'
+        }
+    }
 
     $pluginValid = Get-Content -LiteralPath (Join-Path $source 'plugin.json') -Raw |
         Test-Json -SchemaFile (Join-Path $schemaRoot 'plugin.schema.json')
-    $mcpValid = Get-Content -LiteralPath (Join-Path $source 'mcp.json') -Raw |
+    # The portable 1.0 schema currently rejects vendor extensions even though
+    # OpenAI's current plugin documentation requires extensions.com.openai.auth
+    # on each MCP server. Validate a clone with that extension removed against
+    # the portable schema, and validate the OpenAI extension explicitly above.
+    $portableMcp = Get-Content -LiteralPath (Join-Path $source 'mcp.json') -Raw | ConvertFrom-Json -Depth 100
+    foreach ($property in @($portableMcp.mcpServers.PSObject.Properties)) {
+        $property.Value.PSObject.Properties.Remove('extensions')
+    }
+    $mcpValid = $portableMcp | ConvertTo-Json -Depth 100 |
         Test-Json -SchemaFile (Join-Path $schemaRoot 'mcp.schema.json')
     if (-not $pluginValid -or -not $mcpValid) {
         throw "Schema validation failed for $package"
     }
 
     Copy-Item -LiteralPath (Join-Path $repoRoot 'assets/icon.svg') -Destination (Join-Path $assetDir 'icon.svg')
+    Copy-Item -LiteralPath (Join-Path $sourceRoot 'tool-annotation-justifications.json') -Destination (Join-Path $staging 'tool-annotation-justifications.json')
     $archivePath = Join-Path $distRoot "dotmoose-$package-openai.zip"
     Compress-Archive -Path (Join-Path $staging '*') -DestinationPath $archivePath -CompressionLevel Optimal
 }

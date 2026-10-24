@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dotmoose",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Discover, diagnose, and manage DotMoose hosting through secure remote MCP servers.",
   "author": {
     "name": "DotMoose",
@@ -100,7 +100,7 @@
         }
       },
       "publication": {
-        "release_notes": "Adds the anonymous DotMoose Tools server with 40 DNS, mail, TLS, web, network, and Looking Glass tools and bundles all three production endpoints in one install."
+        "release_notes": "Adds separately validated public-directory submission bundles for the account, discovery, and diagnostic MCP servers while preserving the all-in-one local install."
       }
     }
   }

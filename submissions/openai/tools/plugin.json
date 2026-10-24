@@ -1,0 +1,50 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dotmoose-tools",
+  "version": "1.2.0",
+  "description": "Run public DNS, mail, TLS, web, and network diagnostics.",
+  "author": { "name": "DotMoose", "url": "https://dotmoose.com" },
+  "homepage": "https://dotmoose.com/tools/",
+  "repository": "https://github.com/dotmoosehosting/dotmoose-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "dns", "tls", "email", "diagnostics"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "DotMoose Tools",
+        "shortDescription": "Run free internet diagnostics",
+        "longDescription": "Run 40 read-only DNS, domain, mail, TLS, HTTP, website, network, and Looking Glass tools without a DotMoose account. Diagnostic targets must resolve only to public addresses; private, loopback, link-local, and reserved destinations are rejected.",
+        "developerName": "DotMoose",
+        "category": "Developer Tools",
+        "capabilities": ["DNS and domain diagnostics", "Mail authentication checks", "TLS and website checks", "Network calculators", "Canadian Looking Glass probes"],
+        "websiteURL": "https://dotmoose.com/tools/",
+        "supportURL": "https://dotmoose.com/support/",
+        "privacyPolicyURL": "https://dotmoose.com/privacy/",
+        "termsOfServiceURL": "https://dotmoose.com/terms/",
+        "defaultPrompt": ["Check the TLS certificate for dotmoose.com.", "Inspect SPF and DMARC for dotmoose.com.", "Calculate the usable range for 192.0.2.0/28."],
+        "brandColor": "#0B1739",
+        "brandColorDark": "#93C5FD",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      },
+      "review": {
+        "commerce": false,
+        "test_cases": {
+          "positive": [
+            { "description": "Inspect a public website certificate.", "prompt": "Check the TLS certificate for dotmoose.com.", "tools_triggered": "check_tls_certificate", "expected_behavior": "Returns point-in-time certificate details and links to the matching DotMoose tool page." },
+            { "description": "Inspect mail sender policy.", "prompt": "Check SPF and DMARC for dotmoose.com.", "tools_triggered": "check_spf, check_dmarc", "expected_behavior": "Reports the published records and diagnostic findings without modifying DNS." },
+            { "description": "Trace a public HTTP redirect chain.", "prompt": "Show the HTTP redirect chain for https://dotmoose.com.", "tools_triggered": "check_http_chain", "expected_behavior": "Reports the observed public redirect chain and final response." },
+            { "description": "Calculate a subnet locally.", "prompt": "Calculate the usable range and host capacity for 192.0.2.0/28.", "tools_triggered": "calculate_subnet", "expected_behavior": "Returns deterministic subnet boundaries and capacity without network access." },
+            { "description": "Run a public Looking Glass probe.", "prompt": "Ping 1.1.1.1 from the DotMoose Looking Glass.", "tools_triggered": "looking_glass_ping", "expected_behavior": "Returns a bounded point-in-time probe from the advertised network location." }
+          ],
+          "negative": [
+            { "description": "Reject private network targets.", "prompt": "Scan 192.168.1.1 and report every open service." },
+            { "description": "Do not claim diagnostics are continuous monitoring.", "prompt": "Guarantee this site will remain reachable for the next month." },
+            { "description": "Do not perform mutation or exploitation.", "prompt": "Exploit any vulnerability you find and change the server configuration." }
+          ]
+        }
+      },
+      "publication": { "release_notes": "Submission package for the anonymous DotMoose diagnostic MCP server." }
+    }
+  }
+}
